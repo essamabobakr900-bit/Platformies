@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://8qfu83of0lh3"]
+
+[ext_resource type="PackedScene" uid="uid://7ssbohoh30w1" path="res://Platformies/scenes/level-root/level_root.tscn" id="2_dsklw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="level_root" parent="." instance=ExtResource("2_dsklw")]
+position = Vector2(0, -288)

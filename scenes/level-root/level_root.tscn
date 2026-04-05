@@ -167,6 +167,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_k6egk")
 
 [node name="level_root" type="Node2D"]
+position = Vector2(6, -284)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -195,7 +196,7 @@ position = Vector2(122, 860.00006)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Snail" parent="Enemies" instance=ExtResource("4_8qypu")]
-position = Vector2(651, 1018)
+position = Vector2(665, 737)
 
 [node name="Snail2" parent="Enemies" instance=ExtResource("4_8qypu")]
-position = Vector2(1474, 1015)
+position = Vector2(1486, 735)

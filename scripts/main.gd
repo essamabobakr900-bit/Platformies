@@ -9,6 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func _setup_level() -> void:
-	var enemies = $level_root.get_node_or_null("En")

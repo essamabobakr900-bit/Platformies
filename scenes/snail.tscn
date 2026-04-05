@@ -45,6 +45,11 @@ region = Rect2(342, 0, 38, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ircwk"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"dying",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cf4gw")
@@ -96,7 +101,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ircwk")
 animation = &"runing"
 autoplay = "runing"
-frame_progress = 0.920493
+frame_progress = 0.2364545
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 15)
@@ -111,5 +116,6 @@ wait_time = 2.0
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

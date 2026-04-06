@@ -1,7 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dqo7wrelxqjfp"]
+[gd_scene load_steps=30 format=3 uid="uid://dqo7wrelxqjfp"]
 
 [ext_resource type="Texture2D" uid="uid://b5xjew1qdk1cd" path="res://Platformies/assets/collectable/Collected.png" id="1_e2rdl"]
+[ext_resource type="Script" uid="uid://bjpwi0wtn7m8j" path="res://Platformies/scripts/apple.gd" id="1_m3aqq"]
 [ext_resource type="Texture2D" uid="uid://7ih83owo40s1" path="res://Platformies/assets/collectable/Apple.png" id="2_m3aqq"]
+[ext_resource type="AudioStream" uid="uid://q4devjxmhg7l" path="res://Platformies/assets/sound/collect_apple.wav" id="4_ys2fb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys2fb"]
 atlas = ExtResource("1_e2rdl")
@@ -181,6 +183,7 @@ animations = [{
 radius = 21.213203
 
 [node name="Apple" type="Area2D"]
+script = ExtResource("1_m3aqq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -188,8 +191,15 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_joje0")
 animation = &"collected"
 autoplay = "default"
-frame_progress = 0.69268936
+frame_progress = 0.52458924
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_spm7i")
+
+[node name="Collected_Apple_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ys2fb")
+pitch_scale = 1.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

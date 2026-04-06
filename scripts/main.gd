@@ -1,4 +1,5 @@
 extends Node2D
+@onready var score_label: Label = $CanvasLayer/ScorePanel/Score_Label
 
 var score: int = 0
 # Called when the node enters the scene tree for the first time.
@@ -28,5 +29,5 @@ func _on_player_died(body):
 	
 func increase_score() -> void:
 	score += 1
-	print(score)
+	score_label.text = "SCORE : %s" % score
 		

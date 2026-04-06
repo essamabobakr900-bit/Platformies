@@ -1,10 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://8qfu83of0lh3"]
+[gd_scene load_steps=5 format=3 uid="uid://8qfu83of0lh3"]
 
 [ext_resource type="Script" uid="uid://bdfspia58oicn" path="res://Platformies/scripts/main.gd" id="1_dsklw"]
 [ext_resource type="PackedScene" uid="uid://7ssbohoh30w1" path="res://Platformies/scenes/level-root/level_root.tscn" id="2_dsklw"]
+[ext_resource type="FontFile" uid="uid://njpvjlw0h82v" path="res://Platformies/assets/Fonts/Square-Black.ttf" id="3_m7afd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsklw"]
+bg_color = Color(0, 0.54509807, 0.64705884, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dsklw")
 
 [node name="level_root" parent="." instance=ExtResource("2_dsklw")]
 position = Vector2(0, -288)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScorePanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.5
+offset_top = 10.0
+offset_right = 215.5
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsklw")
+
+[node name="Score_Label" type="Label" parent="CanvasLayer/ScorePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -36.0
+offset_right = 107.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_m7afd")
+theme_override_font_sizes/font_size = 72
+text = "SCORE : 0"

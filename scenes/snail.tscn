@@ -101,7 +101,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ircwk")
 animation = &"runing"
 autoplay = "runing"
-frame_progress = 0.95282054
+frame_progress = 0.31633464
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 15)
@@ -112,7 +112,7 @@ position = Vector2(17, -1)
 shape = SubResource("CircleShape2D_4bgke")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

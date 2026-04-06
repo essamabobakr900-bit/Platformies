@@ -1,12 +1,19 @@
 extends Node2D
+
+
+@onready var fade: ColorRect = $CanvasLayer/fade
+
+
 @onready var score_label: Label = $CanvasLayer/ScorePanel/Score_Label
 var level: int = 1
 var score: int = 0
 var current_level_root: Node = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fade.modulate.a = 1.0
 	current_level_root = get_node("level_root2")
 	_load_level(level)
+	
 
 
 func _load_level(level_number: int) -> void:
@@ -51,4 +58,3 @@ func _on_player_died(body):
 func increase_score() -> void:
 	score += 1
 	score_label.text = "SCORE : %s" % score
-		

@@ -12,19 +12,25 @@ var current_level_root: Node = null
 func _ready() -> void:
 	fade.modulate.a = 1.0
 	current_level_root = get_node("level_root2")
-	_load_level(level)
+	await _load_level(level, true, false)
 	
 
 
-func _load_level(level_number: int) -> void:
+func _load_level(level_number: int, first_load: bool, reset_score: bool) -> void:
+	if not first_load:
+		await _fade(1.0)
 	if current_level_root:
 		current_level_root.queue_free()
-		
+	if reset_score:
+		score = 0
+		score_label.text = "SCORE: 0"
 	var level_path = "res://Platformies/scenes/level-root/level%s.tscn" % level_number
 	current_level_root = load(level_path).instantiate()
 	add_child(current_level_root)
 	current_level_root.name = "level_root2"
 	_setup_level(current_level_root)
+	
+	await _fade(0.0)
 	
 func _setup_level(level_root: Node) -> void:
 	var exit = level_root.get_node_or_null("Exit")
@@ -47,14 +53,19 @@ func _on_exit_body_entered(body: Node2D) -> void:
 		level += 1
 		print(body)
 		body.can_move = false
-		call_deferred("_load_level", level)
+		await _load_level(level, false, false)
 
 
 func _on_player_died(body):
 	body.die()
-	print("Player killed")
-	
+	await _load_level(level, false, true)	
 	
 func increase_score() -> void:
 	score += 1
 	score_label.text = "SCORE : %s" % score
+
+func _fade(to_alpha: float) -> void:
+	var tween := create_tween()
+	tween.tween_property(fade, "modulate:a", to_alpha, 1.5)
+	await tween.finished
+	

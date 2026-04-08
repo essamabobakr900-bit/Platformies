@@ -279,10 +279,10 @@ position = Vector2(122, 860.00006)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Snail" parent="Enemies" instance=ExtResource("4_nhq8r")]
-position = Vector2(842, 731)
+position = Vector2(842, 738)
 
 [node name="Snail2" parent="Enemies" instance=ExtResource("4_nhq8r")]
-position = Vector2(1772, 735)
+position = Vector2(1773, 737)
 
 [node name="Apples" type="Node" parent="."]
 

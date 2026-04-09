@@ -36,7 +36,7 @@ func _setup_level(level_root: Node) -> void:
 	var exit = level_root.get_node_or_null("Exit")
 	if exit:
 		exit.body_entered.connect(_on_exit_body_entered)
-		
+	
 		
 	var apples = level_root.get_node_or_null("Apples")
 	if apples:
@@ -54,8 +54,7 @@ func _on_exit_body_entered(body: Node2D) -> void:
 		print(body)
 		body.can_move = false
 		await _load_level(level, false, false)
-
-
+	
 func _on_player_died(body):
 	body.die()
 	await _load_level(level, false, true)	

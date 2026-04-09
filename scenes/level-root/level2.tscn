@@ -293,7 +293,7 @@ position = Vector2(122, 860.00006)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Snail" parent="Enemies" instance=ExtResource("4_8qypu")]
-position = Vector2(842, 731)
+position = Vector2(841, 737)
 
 [node name="Snail2" parent="Enemies" instance=ExtResource("4_8qypu")]
 position = Vector2(1772, 735)

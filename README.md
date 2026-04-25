@@ -23,7 +23,4 @@ Your target is to reach the win flag, so try and find a way to reach it.
 * Godot Engine
 * GDScript
 
-## Tutorial followed
-https://youtu.be/bjmNauqXkVw?si=yuv1GgQ8Wqy0UqpO
-https://youtu.be/Z9W4bSdeC04?si=GLtyF2WtQ6CTHiXe
-https://youtu.be/bjmNauqXkVw?si=xJpaJtrvgJkoQSSK
+

@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var fade: ColorRect = $CanvasLayer/fade
-
+#
 
 @onready var score_label: Label = $CanvasLayer/ScorePanel/Score_Label
 var level: int = 1
@@ -54,7 +54,6 @@ func _on_exit_body_entered(body: Node2D) -> void:
 		print(body)
 		body.can_move = false
 		await _load_level(level, false, false)
-	
 func _on_player_died(body):
 	body.die()
 	await _load_level(level, false, true)	
@@ -67,4 +66,3 @@ func _fade(to_alpha: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(fade, "modulate:a", to_alpha, 1.5)
 	await tween.finished
-	

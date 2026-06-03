@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://ba4i43bp1rbp"]
 
-[ext_resource type="Texture2D" uid="uid://o0bvj7ktr5yj" path="res://Platformies/assets/Green.png" id="1_5ju6i"]
+[ext_resource type="Texture2D" uid="uid://dp5tisdm4xwtc" path="res://Platformies/assets/Purple.png" id="1_nycmc"]
 [ext_resource type="Texture2D" uid="uid://ba81pnpddkim" path="res://Platformies/assets/Terrain (16x16).png" id="2_yj6t0"]
 [ext_resource type="PackedScene" uid="uid://ctdmmnt5msr41" path="res://Platformies/scenes/player.tscn" id="3_aosan"]
 [ext_resource type="PackedScene" uid="uid://djst3udkyy4ki" path="res://Platformies/scenes/snail.tscn" id="4_nhq8r"]
@@ -264,7 +264,7 @@ offset_right = 1863.0
 offset_bottom = 1062.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5ju6i")
+texture = ExtResource("1_nycmc")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

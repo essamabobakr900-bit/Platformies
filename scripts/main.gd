@@ -50,9 +50,13 @@ func _setup_level(level_root: Node) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		level += 1
-		print(body)
 		body.can_move = false
+
+		level += 1
+
+		if level > 2:
+			level = 1
+
 		await _load_level(level, false, false)
 func _on_player_died(body):
 	body.die()
